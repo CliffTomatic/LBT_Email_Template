@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Email Template</title>
     <style>
-        :root {
-            --primary-purple: #8e44ad;
-            --primary-blue: #098DF5;
+
+        .color-purple {
+            color: #8e44ad;
+        }
+
+        .bold {
+            font-weight: bold;
         }
 
         /* Reset Styles */
@@ -82,7 +86,7 @@
 
         /* Title's subTitle */
         .body-content .sub-title {
-            color: var(--primary-blue);
+            color: #098DF5;
             margin: 0;
         }
 
@@ -91,10 +95,9 @@
             text-align: left;
         }
         /* Make main text aligned center */
-        .body-content .body-text {
-            text-align: left;
+        .align-center {
+            text-align: center;
         }
-
         .body-content p {
             margin-bottom: 15px;
         }
@@ -102,7 +105,7 @@
         /* Footer Section */
         .custom-footer {
             background-color: #ffffff; /* White background */
-            padding: 20px;
+            padding: 20px 25px;
             font-size: 14px;
             color: #333333;
             border-top: 1px solid #e0e0e0;
@@ -121,7 +124,7 @@
         }
 
         .footer-left h3 {
-            color: #5a2d82; /* Purple color */
+            color: #8e44ad; /* Purple color */
             margin-bottom: 10px;
         }
 
@@ -159,11 +162,29 @@
             text-decoration: underline;
         }
 
+        .event-object h3{
+            margin: 5px 0 5px 0;
+        }
+
+        .event-object .event-name {
+            color: #098DF5;
+        }
+
+
+        /* Event Object */
+        .event-object .tab {
+            margin: 0 0 0 20px;
+        }
+
+        .event-object .second-tab {
+            margin: 0 0 0 8px;
+        }
+
 
     </style>
 </head>
 <body>
-<div class="container">
+<div class="container main-content">
     <div class="content-box">
         <!-- Header -->
         <div class="header">
@@ -183,14 +204,46 @@
         <!-- Body Content -->
         <div class="body-content">
             <h1>TITLE</h1>
-            <h3 class="sub-title">Sub Title</h3>
+            <h3 class="sub-title" style="color: #098DF5;">Sub Title</h3>
             <div class="body-text">
                 <p>
                     Dear {Name}
                 </p>
-                <ul>
-                    <li>{List}</li>
-                </ul>
+                <p>
+                    At LearnBasicTech, we’re excited to help you grow your tech skills and connect with a community of learners! <br>
+                </p>
+                <h3 class="align-center">
+                    <b>Check out these upcoming events in your area:</b>
+                </h3>
+                    <!-- Start of Event Object-->
+                <div class="event-object">
+                    <h3>
+                        <span class="event-name">[Event Name]</span>
+                    </h3>
+                    <p class="tab" style="padding: 0 0 0 0;">
+                        <span class="bold">
+                            🗓️<span class="second-tab"></span>Date: </span> [Date + Time]
+                    </p>
+                    <p class="tab" style="padding: 0 0 0 0;">
+                        <span class="bold">📍<span class="second-tab"></span>Location: </span> [Address]
+                    </p>
+                    <p class="tab" style="padding: 0 0 0 0;">
+                        <span class="bold">👉<span class="second-tab"></span>RSVP Here: </span> [EventBrite Link]
+                    </p>
+                </div>
+                    <!-- End of Event Object-->
+                <br>
+
+                <p class="align-center">
+                    Feel free to take our online courses at
+                    <a href="https://learnbasictech.org/courses" style="color: #8e44ad;">LearnBasicTech.org/courses</a>
+                </p>
+
+
+                <p class="align-center bold">
+                    Best Regards,<br>
+                    <span class="color-purple event-bold" style="color: #8e44ad;">Team LearnBasicTech</span>
+                </p>
             </div>
         </div>
 
@@ -199,8 +252,7 @@
             <div class="footer-content">
                 <div class="footer-left">
                     <h3>LearnBasicTech</h3>
-                    <p style="margin-bottom: 10px;">1104 N Eastern Ave, Los Angeles, CA<br>
-                        90063, Los Angeles<br>
+                    <p style="margin-bottom: 10px;">1100 N Eastern Ave, Los Angeles, CA<br>90063
                         United States of America
                     </p>
                     <div class="social-icons">
@@ -225,7 +277,7 @@
                     <p>You received this email because<br>
                         you signed up on our website</p>
                     <br>
-                    <a href="#" class="unsubscribe-link">Unsubscribe</a>
+                    <a href="{$unsubscribe}" style="color: #8e44ad;">Unsubscribe</a>
                 </div>
             </div>
         </div>
